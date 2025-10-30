@@ -13,4 +13,8 @@ print("Here is an example of the output of 'print(\"example text\")'")
 
 print("'example text'")
 
+print("You can also print datastructures that arn't strings like integers by entering them in without quotes such as 'print(4)'")
+
+print(4)
+
 print("")
