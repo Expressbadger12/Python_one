@@ -22,3 +22,5 @@ habitat = "ocean"
 food = "krill"
 
 print("My favorite animal is:", animal)
+print("What does a whale eat?", food)
+print("Where does the whale live?", habitat)
