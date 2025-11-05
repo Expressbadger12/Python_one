@@ -16,7 +16,7 @@ print ("Example 2: My name is Boone and I love music")
 
 #Now we can use variables
 #Definition: where you can store information in variables so thatt you can reuse it
-#Le't create some variations
+#Let's create some variations
 animal = "whale"
 habitat = "ocean"
 food = "krill"
