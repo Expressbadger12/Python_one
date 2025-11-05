@@ -56,3 +56,5 @@ if see_entries == 'y':
         #This will run if the file doesn't exist yet
         print("No journal file found -- make an entry first")
 
+#Step 5: Goodbye message to end the program
+print(f"\nThank you, {name}. Safe travels.")
