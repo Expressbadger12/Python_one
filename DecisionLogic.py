@@ -86,11 +86,11 @@ print_line()
 #logical operators
 
 is_sunny = True
-has_hat = false
+has_hat = False
 print("logical examples:")
 print(f"is_sunny and have_hat -> {is_sunny and has_hat}" ) #needs oth true conditions because and
 print(f"is_sunny or have had -> {is_sunny or has_hat}") # has to have at least one
-print(f"not has_hat -> {not have_hat}")
+print(f"not has_hat -> {not has_hat}")
 
 print_line()
 
