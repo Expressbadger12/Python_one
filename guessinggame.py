@@ -41,7 +41,7 @@ def play_round(round_number):
 
         secret_number = get_secret_number()
         max_guesses = 5
-        guesses_users = 0
+        guesses_used = 0
 
         while guesses_used < max_guesses:
             guess = int(input("Enter your guess(1 tp 20): "))
