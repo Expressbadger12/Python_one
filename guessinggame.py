@@ -60,7 +60,7 @@ def play_round(round_number):
                  print("Too hight, try a lower njumber!")        
 
             if guesses_used < max_guesses:
-                 print (f" You have {guesses_used - max_guesses} guesses left!\n")
+                 print (f" You have {max_guesses - guesses_used} guesses left!\n")
 
         print("\n out of guesses! \n")
         print(f"The number was: {secret_number}")
