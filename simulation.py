@@ -78,7 +78,7 @@ elif choice1 == "right":
         choice2ba = input("The receptionist asks for your name").strip().lower()
         print("")
 
-        if "bill" or "keen" in choice2ba:
+        if "bill" in choice2ba or "keen" in choice2ba:
              print("'Ah, Mr. Keen, you're three days early. I guess that's space travel for you. I'll show you to your room.' You are taken to a lovely hotel room. In 2 days the real Bill Keen comes and you get in trouble. You lose") 
              print("")
         else:
