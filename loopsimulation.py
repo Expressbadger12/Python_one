@@ -55,9 +55,9 @@ def forest_path(name):
     score = 0
 
     forest_tasks = {
-        "1": "Cross a arrow bridge over a river",
-        "2": "Solve a glowing rune puzzle on a stone",
-        "3": "Help a lost traveler find their way",
+        "Cross a arrow bridge over a river",
+        "Solve a glowing rune puzzle on a stone",
+        "Help a lost traveler find their way",
     }
 
     for task in forest_tasks:
@@ -69,10 +69,11 @@ def forest_path(name):
         if answer == "y":
             print("You bravely complete teh challenge and get 10 points.")
             score += 10
+            continue
 
         elif answer == "n":
             print("You decide to skip this challenge and move on")
-
+            continue
         else:
             print("You do nothing.")
 
