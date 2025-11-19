@@ -37,7 +37,7 @@ def show_intro():
     print("In this adventure, your decisions are powered by loops and functions")
     print("you will explore a magical world as we secretly practice Python concepts")
 
-    name = get_player_name
+    name = get_player_name()
 
     print(f"\n Nice to meet you, {name}! Let's begin your journey ")
 
@@ -55,9 +55,9 @@ def forest_path(name):
     score = 0
 
     forest_tasks = {
-        "Cross a arrow bridge over a rive"
-        "Solve a glowing rune puzzle on a stone"
-        "Help a lost traveler find their way"
+        "1": "Cross a arrow bridge over a river",
+        "2": "Solve a glowing rune puzzle on a stone",
+        "3": "Help a lost traveler find their way",
     }
 
     for task in forest_tasks:
