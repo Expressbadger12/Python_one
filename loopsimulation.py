@@ -168,3 +168,34 @@ def show_results(name, score):
 
     #end with a friendly message
     print("\n Thanks for playing loop quest simulation!")
+
+
+#This function runs one full version of the simulation from start to finish. 
+def run_simulation():
+    name = show_intro()
+
+    score = choose_main_path(name)
+    
+    show_results(name, score)
+    
+def main():
+    print("Welcome to the loops and function assignment")
+          
+    while True:
+        run_simulation()
+
+        replay = input("\n would you like to run the simulation again? (y/n)").lower().strip()
+
+        if replay == "y":
+           print("restarting simulation... \n")
+           continue
+        elif replay == "n":
+            print("Thanks for playing!")
+            break
+        else: 
+            print("I didn't nserstand that try again")
+            continue
+
+
+if __name__ == "__main__":
+    main()
