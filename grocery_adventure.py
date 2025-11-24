@@ -36,7 +36,7 @@ def show_menu(): #this function prints the main menu / functions help us reuse c
     print("\n1 - view store items")
     print("\n2 - add items to cart")
     print("\n3 - view cart and total")
-    print("\n4 - wuit game")
+    print("\n4 - quit game")
 
 def show_store_items():
     print("\n--- Store Items ---")
