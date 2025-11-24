@@ -82,3 +82,25 @@ def view_cart_and_total():
         total_cost += subtotal
         print(f"{item} x {count} = ${subtotal: .2f}")
 
+    # after the loop, print total cost
+    print("--------------------------------------")
+    print(f"total cost: ${total_cost: .2f}")
+
+#------------------------------------------main game loop--------------------------------------------------
+running = True
+
+while running:
+    show_menu()
+
+    choice = input("enter your choice, (1-4):").strip()
+
+    if choice == "1":
+        show_store_items()
+    elif choice == "2":
+        add_to_cart()
+    elif choice == "3":
+        view_cart_and_total()
+    elif choice == "4":
+        running = False
+    else:
+        print("Invalid cjoice please enter 1, 2, 3, or 4")
