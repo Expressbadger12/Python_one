@@ -5,9 +5,11 @@ import random
 print("Welcome to the D&D NPC generator!")
 print("\nThis works specifically for Boone's sci fi game, but it can be modified to work for any game")
 
-imperialFirstNames = []
+MimperialFirstNames = ["Sam", "Matt", "Martain", "James", "Booth", "Ben", "Killian", "Oxide", "Jeremey", "Will", "Micheal", "Kaleb", "Tim", "Skooter", "Joseph", "Simon", "Adam", "Aaron", "Isaac", "Pim", "Tony", "Steve", "Ian", "Josh", "Jake", "Snake", "Peter", "Elias", "Eli", "Angel", "Henry", "Gavin", "Devin", "Jordan", "Abraham", "Muhammod", "Tom", "Egypt"]
 
-imperialLastNames = []
+FimperialFirstName = ["Sam", "Alice", "Rebecca", "Witney", "Elli", "Sarah", "Aubrey", "Audrey", "Mary", "Beatrice", "Anna", "May", "Olivia", "Sydney", "Dove", "Ramona", "Beverly", "Jess", "Jenny", "Poppy", "Synthia", "Pandora", "Bloodrayn", "Rei", "Molly", "Natalie", "Slinda", "Linda", "Lucy", "Fern", "Julia", "Bell", "Diane", "Amelia", "Adda", "Abba", "Ella"]
+
+imperialLastNames = ["Jones", "Earthan", "Euphrates", "Hamnet", "Johnson", "Stevens", "Brick", "Pinchio", "Thanker", "Localized", "Marsha", "Strovinal", "Bigidiots", "Florida", "Helsing", "Harker", "Pon", "Sweatshop", "O'Riley", "Minus", "Crusher", "Himmle", "Dreadmaw", "Catcher", "Ruth", "Gohn", "Bilth", "Barlowe", "Curve", "BigLeaper", "Rattling", "Samson", "Gleemingslick"]
 
 alienFamilyName = []
 
@@ -24,7 +26,22 @@ def menue():
     print("\n1: Generate new NPC")
     print("\n2: Quit")
 
+    choice = input("Enter choice: ").strip().lower()
+
+    if choice == "1":
+        generate()
+
 def generate():
+   
+    origin = pickOrigin()
+
+    print(f"\nOrigin selected: {origin}")
+
+    gender = pickGender()
+
+    print(f"Gender selected: {gender}")
+
+def pickOrigin():
     print("\nSelect your NPC's origin:")
     print("\n1: Imperial")
     print("\n2: Alien")
@@ -36,7 +53,7 @@ def generate():
     if origin == "2":
         origin = "alien"
 
-    while origin != "imperial" or origin != "alien":
+    while origin != "imperial" and origin != "alien":
         origin = input("Invalid choice, chose again:").strip().lower()
         if origin == "1":
             origin = "imperial"
@@ -44,7 +61,11 @@ def generate():
         if origin == "2":
              origin = "alien"
 
-    print(f"\nOrigin selected: {origin}")
+    return origin
+
+
+
+def pickGender():
     print("Select gender:")
     print("\n1: Randomize")
     print("\n2: Male")
@@ -64,7 +85,7 @@ def generate():
     if gender == "3":
         gender = "female"
 
-    while gender != "male" or gender != "female":
+    while gender != "male" and gender != "female":
        
         gender = input("Invalid choice, choose again: ").strip().lower()
        
@@ -79,3 +100,8 @@ def generate():
             gender = "male"
         if gender == "3":
             gender = "female"
+
+    return gender
+
+
+menue()
