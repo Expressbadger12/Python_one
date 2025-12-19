@@ -24,26 +24,52 @@ def menue():
     printLine()
     print("\n===Main Menu===")
     print("\n1: Generate new NPC")
-    print("\n2: Quit")
+    print("\n2: Roll a die")
+    print("\n2\3: Quit")
 
     choice = input("Enter choice: ").strip().lower()
 
     if choice == "1":
         generate()
     elif choice == "2":
+        dieMenu()
+    elif choice == "3":
         quit()
     else:
         print("You messed up")
         menue()
+
+def dieMenu():
+    printLine()
+    print("\nType in the number of sides your dice should have")
+    while True:
+        sides = input("Enter sides here: ").strip().lower()
+
+        try:
+            sides = int(sides)
+            if sides <= 0:
+                print("dice must have more than 0 sides")
+                continue
+            break
+        except ValueError:
+            print("Please print a valid number")
+    result = roll(sides)
+    print(f"\nYou got: {result}")
+
+    menue()
+
+def roll(num):
+    result = random.randint(1, num)
+    return result
 
 def generate():
     origin = pickOrigin()
 
     print(f"\nOrigin selected: {origin}")
 
-    gender = pickGender()
-
-    print(f"Gender selected: {gender}")
+    if origin == "imperial":
+        gender = pickGender()
+        print(f"Gender selected: {gender}")
 
     if origin == "imperial":
         generateImperial(gender)
@@ -132,7 +158,28 @@ def generateImperial(gender):
 
     lastname = random.choice(imperialLastNames)
 
-    print(f"{firstname} {lastname}")
+    abomb = froskEyes()
+
+    if abomb != "no":
+        print(f"{firstname} {lastname} is a {abomb} abomination")
+    else:
+        print(f"{firstname} {lastname}")
+
+
+def froskEyes():
+    rand = random.randint(1,10)
+
+    if rand == 1:
+        isAbominant = True
+    else:
+        isAbominant = False
+
+    if isAbominant:
+        abomb = random.choice(abominationTypes)
+    else:
+        abomb = "no"
+
+    return abomb
 
 
 def generateAlien():
@@ -140,5 +187,7 @@ def generateAlien():
     familyName = random.choice(alienFamilyName)
 
     personName = random.choice(alienPersonalName)
+
+    print(f"{familyName} {personName}")
 
 menue()
