@@ -30,6 +30,11 @@ def menue():
 
     if choice == "1":
         generate()
+    elif choice == "2":
+        quit()
+    else:
+        print("You messed up")
+        menue()
 
 def generate():
     origin = pickOrigin()
