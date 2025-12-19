@@ -11,11 +11,11 @@ FimperialFirstName = ["Sam", "Alice", "Rebecca", "Witney", "Elli", "Sarah", "Aub
 
 imperialLastNames = ["Jones", "Earthan", "Euphrates", "Hamnet", "Johnson", "Stevens", "Brick", "Pinchio", "Thanker", "Localized", "Marsha", "Strovinal", "Bigidiots", "Florida", "Helsing", "Harker", "Pon", "Sweatshop", "O'Riley", "Minus", "Crusher", "Himmle", "Dreadmaw", "Catcher", "Ruth", "Gohn", "Bilth", "Barlowe", "Curve", "BigLeaper", "Rattling", "Samson", "Gleemingslick"]
 
-alienFamilyName = []
+alienFamilyName = ["Allack", "Uphrea", "Mothman", "Gourra", "Ipvsix", "Hand"]
 
-alienPersonalName = []
+alienPersonalName = ["Slaggn", "Bipol", "Igwan", "jhahass", "Limsh", "Mettir", "Ragoo"]
 
-abominationTypes = []
+abominationTypes = ["Cat", "Bird", "Insect", "Tiefling", "Reptile", "All lung", "Fish", "Goblin", "Snake", "Monkey"]
 
 def printLine():
     print("\n---------------------------------------------------------------------------")
@@ -32,7 +32,6 @@ def menue():
         generate()
 
 def generate():
-   
     origin = pickOrigin()
 
     print(f"\nOrigin selected: {origin}")
@@ -41,7 +40,18 @@ def generate():
 
     print(f"Gender selected: {gender}")
 
+    if origin == "imperial":
+        generateImperial(gender)
+        menue()
+    elif origin == "alien":
+        generateAlien()
+        menue()
+    else:
+        print("You messed up")
+        generate()
+
 def pickOrigin():
+    printLine()
     print("\nSelect your NPC's origin:")
     print("\n1: Imperial")
     print("\n2: Alien")
@@ -66,6 +76,7 @@ def pickOrigin():
 
 
 def pickGender():
+    printLine()
     print("Select gender:")
     print("\n1: Randomize")
     print("\n2: Male")
@@ -74,7 +85,7 @@ def pickGender():
     gender = input("Enter choice here: ").strip().lower()
 
     if gender == "1" or gender == "randomize":
-        rand = random.randint(1, 3) #either 1 or 2. Pretty sure
+        rand = random.randint(1, 2) #either 1 or 2. Pretty sure
         if rand == 1:
             gender = "male"
         else:
@@ -90,7 +101,7 @@ def pickGender():
         gender = input("Invalid choice, choose again: ").strip().lower()
        
         if gender == "1" or gender == "randomize":
-            rand = random.randint(1, 3) #either 1 or 2. Pretty sure
+            rand = random.randint(1, 2) #either 1 or 2. Pretty sure
             if rand == 1:
                 gender = "male"
             else:
@@ -103,7 +114,26 @@ def pickGender():
 
     return gender
 
+def generateImperial(gender):
+    printLine()
+    print(f"Generating a {gender} imperial citizen")
+    
+    firstlist = MimperialFirstNames
+
+    if gender != "male":
+        firstlist = FimperialFirstName
+
+    firstname = random.choice(firstlist)
+
+    lastname = random.choice(imperialLastNames)
+
+    print(f"{firstname} {lastname}")
 
 
+def generateAlien():
+    printLine()
+    familyName = random.choice(alienFamilyName)
+
+    personName = random.choice(alienPersonalName)
 
 menue()
