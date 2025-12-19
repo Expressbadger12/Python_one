@@ -25,7 +25,7 @@ def menue():
     print("\n===Main Menu===")
     print("\n1: Generate new NPC")
     print("\n2: Roll a die")
-    print("\n2\3: Quit")
+    print("\n3: Quit")
 
     choice = input("Enter choice: ").strip().lower()
 
